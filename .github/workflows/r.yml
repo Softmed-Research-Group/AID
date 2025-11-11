@@ -24,8 +24,8 @@ jobs:
       - name: Read package name and local version from DESCRIPTION
         id: local_info
         run: |
-          pkg_name=$(Rscript -e "desc <- read.dcf('DESCRIPTION'); cat(desc[1,'Package'])")
-          pkg_ver=$(Rscript -e "desc <- read.dcf('DESCRIPTION'); cat(desc[1,'Version'])")
+          pkg_name=$(Rscript -e "desc <- read.dcf('AID/DESCRIPTION'); cat(desc[1,'Package'])")
+          pkg_ver=$(Rscript -e "desc <- read.dcf('AID/DESCRIPTION'); cat(desc[1,'Version'])")
           echo "pkg_name=$pkg_name" >> $GITHUB_ENV
           echo "pkg_ver=$pkg_ver" >> $GITHUB_ENV
           echo "Local package: $pkg_name $pkg_ver"
